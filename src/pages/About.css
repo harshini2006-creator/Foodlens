@@ -1,0 +1,316 @@
+.about-page {
+  min-height: 100vh;
+  padding: 100px 0 80px;
+}
+
+.about-page .container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.about-hero {
+  text-align: center;
+}
+
+.about-hero .section-subtitle {
+  margin: 0 auto;
+}
+
+.about-section-title {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  color: var(--neutral-900);
+  line-height: 1.3;
+  margin: 12px 0 20px;
+}
+
+.about-body-text {
+  font-size: 15px;
+  color: var(--neutral-500);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* What is FoodLens */
+.about-what {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-what__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.about-stat__icon {
+  font-size: 28px;
+}
+
+.about-stat__value {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--green-700);
+}
+
+.about-stat__label {
+  font-size: 12px;
+  color: var(--neutral-500);
+  font-weight: 500;
+}
+
+/* Problem */
+.about-problem .section-tag {
+  display: inline-flex;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.problem-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.problem-card__icon {
+  font-size: 32px;
+  width: 52px;
+  height: 52px;
+  background: var(--neutral-50);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problem-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--neutral-900);
+}
+
+.problem-card__desc {
+  font-size: 14px;
+  color: var(--neutral-500);
+  line-height: 1.7;
+}
+
+/* AI Section */
+.about-ai .section-tag {
+  display: inline-flex;
+}
+
+.about-ai__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.about-ai__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ai-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+}
+
+.ai-card__icon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  background: var(--green-50);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ai-card__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin-bottom: 2px;
+}
+
+.ai-card__desc {
+  font-size: 13px;
+  color: var(--neutral-500);
+}
+
+/* Roadmap */
+.about-roadmap .section-tag {
+  display: inline-flex;
+}
+
+.roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 8px;
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--neutral-100);
+  background: var(--white);
+  transition: background 0.2s;
+}
+
+.roadmap-item:last-child {
+  border-bottom: none;
+}
+
+.roadmap-item:hover {
+  background: var(--neutral-50);
+}
+
+.roadmap-item--done {
+  background: var(--green-50);
+}
+
+.roadmap-item--done:hover {
+  background: #dcfce7;
+}
+
+.roadmap-item__indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: var(--neutral-100);
+  color: var(--neutral-500);
+}
+
+.roadmap-item--done .roadmap-item__indicator {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.roadmap-item__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.roadmap-item__phase {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--neutral-400);
+  min-width: 60px;
+}
+
+.roadmap-item__text {
+  font-size: 14px;
+  color: var(--neutral-700);
+  font-weight: 500;
+}
+
+.roadmap-item__badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.badge--ready { background: #dcfce7; color: #15803d; }
+.badge--upcoming { background: #f1f5f9; color: #475569; }
+
+/* Disclaimer */
+.about-disclaimer {
+  padding: 24px;
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.about-disclaimer__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 12px;
+}
+
+.about-disclaimer p {
+  font-size: 14px;
+  color: #a16207;
+  line-height: 1.7;
+}
+
+/* CTA */
+.about-cta {
+  text-align: center;
+  padding: 48px 32px;
+  background: linear-gradient(135deg, var(--green-50), var(--white));
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--green-100);
+}
+
+.about-cta h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--neutral-900);
+  margin-bottom: 10px;
+}
+
+.about-cta p {
+  font-size: 16px;
+  color: var(--neutral-500);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+  .about-what,
+  .about-ai__body {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-what__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,124 @@
+.ingredient-list {
+  padding: 24px;
+}
+
+.ingredient-list__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ingredient-list__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--neutral-900);
+}
+
+.ingredient-list__count {
+  font-size: 13px;
+  color: var(--neutral-500);
+  background: var(--neutral-100);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.ingredient-list__note {
+  font-size: 12px;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+
+.ingredient-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.ingredient-item:last-child {
+  border-bottom: none;
+}
+
+.ingredient-item__left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ingredient-item__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--neutral-800);
+}
+
+.ingredient-item__note {
+  font-size: 12px;
+  color: var(--neutral-400);
+}
+
+.ingredient-item__concern {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.concern--none {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.concern--low {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.concern--moderate {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.concern--high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.ingredient-list__legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top: 1px solid var(--neutral-100);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--neutral-500);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}

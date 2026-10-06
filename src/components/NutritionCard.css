@@ -1,0 +1,91 @@
+.nutrition-card {
+  padding: 24px;
+}
+
+.nutrition-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nutrition-card__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--neutral-900);
+}
+
+.nutrition-card__serving {
+  font-size: 13px;
+  color: var(--neutral-500);
+  background: var(--neutral-100);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.nutrition-card__note {
+  font-size: 12px;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+
+.nutrition-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.nutrition-item__top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.nutrition-item__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--neutral-700);
+  flex: 1;
+}
+
+.nutrition-item__value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--neutral-900);
+}
+
+.nutrition-item__dv {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.nutrition-item__bar-bg {
+  height: 6px;
+  background: var(--neutral-100);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.nutrition-item__bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+
+.nutrition-card__dv-note {
+  font-size: 12px;
+  color: var(--neutral-400);
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--neutral-100);
+}

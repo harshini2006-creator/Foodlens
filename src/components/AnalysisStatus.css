@@ -1,0 +1,81 @@
+.analysis-status {
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  border: 1px solid transparent;
+}
+
+.status--good {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.status--moderate {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.status--warning {
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.analysis-status__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.analysis-status__emoji {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.analysis-status__label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--neutral-500);
+  margin-bottom: 4px;
+}
+
+.analysis-status__title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--neutral-900);
+}
+
+.analysis-status__score-wrap {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.analysis-status__summary {
+  font-size: 15px;
+  color: var(--neutral-600);
+  line-height: 1.7;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  padding-top: 16px;
+}
+
+.score-circle {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-circle svg {
+  position: absolute;
+  inset: 0;
+}
+
+.score-circle__value {
+  position: relative;
+  font-size: 18px;
+  font-weight: 800;
+  z-index: 1;
+}

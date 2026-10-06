@@ -1,0 +1,101 @@
+.alt-section {
+  padding: 24px;
+}
+
+.alt-section__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin-bottom: 8px;
+}
+
+.alt-section__subtitle {
+  font-size: 14px;
+  color: var(--neutral-500);
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.alt-section__note {
+  font-size: 12px;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+
+.alt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.alt-card {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.alt-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.alt-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.alt-card__name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--neutral-900);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.alt-card__score {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.alt-card__score-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--green-700);
+}
+
+.alt-card__score-label {
+  font-size: 12px;
+  color: var(--neutral-400);
+}
+
+.alt-card__reason {
+  font-size: 13px;
+  color: var(--neutral-600);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.alt-card__bar-bg {
+  height: 5px;
+  background: var(--green-100);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.alt-card__bar {
+  height: 100%;
+  background: var(--green-500);
+  border-radius: 3px;
+  transition: width 1s ease;
+}
