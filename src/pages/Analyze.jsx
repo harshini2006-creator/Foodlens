@@ -1,28 +1,37 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UploadBox from "../components/UploadBox";
+import CameraCapture from "../components/CameraCapture";
 import { analyzeFood } from "../services/api";
 import "./Analyze.css";
 
 export default function Analyze() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedImageUrl, setSelectedImageUrl] = useState(null);
+  const [showCamera, setShowCamera] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleFileSelected = (file) => {
     setSelectedFile(file);
+    setSelectedImageUrl(URL.createObjectURL(file));
     setError("");
   };
 
   const handleRemove = () => {
     setSelectedFile(null);
+    setSelectedImageUrl(null);
     setError("");
+  };
+
+  const handleCameraCapture = (file) => {
+    handleFileSelected(file);
   };
 
   const handleAnalyze = async () => {
     if (!selectedFile) {
-      setError("Please upload an image first.");
+      setError("Please upload or capture an image first.");
       return;
     }
 
@@ -31,8 +40,10 @@ export default function Analyze() {
 
     try {
       const result = await analyzeFood(selectedFile);
-      // Store result in sessionStorage so Results page can read it
-      sessionStorage.setItem("foodlens_result", JSON.stringify(result));
+      sessionStorage.setItem(
+        "foodlens_ocr_result",
+        JSON.stringify({ ...result, imageUrl: selectedImageUrl }),
+      );
       navigate("/results");
     } catch (err) {
       setError(err.message || "Something went wrong. Please try again.");
@@ -49,14 +60,28 @@ export default function Analyze() {
           <div className="section-tag">📸 Upload & Analyze</div>
           <h1 className="section-title">Analyze Your Food</h1>
           <p className="section-subtitle">
-            Upload a clear photo of any Indian packaged food product. Make sure the
-            ingredient and nutrition label is visible in the image.
+            Upload or capture a photo of any packaged food product. Make sure the
+            ingredient and nutrition label is clearly visible.
           </p>
         </div>
 
-        {/* Main upload area */}
+        {/* Main area */}
         <div className="analyze-page__body">
           <div className="analyze-page__upload-col animate-fade-in-up">
+            {/* Input mode tabs */}
+            {!selectedFile && (
+              <div className="analyze-input-tabs">
+                <div className="analyze-input-tabs__label">Choose how to add your image:</div>
+                <button
+                  className="analyze-camera-btn"
+                  onClick={() => setShowCamera(true)}
+                  type="button"
+                >
+                  📷 Use Camera
+                </button>
+              </div>
+            )}
+
             <UploadBox
               onFileSelected={handleFileSelected}
               selectedFile={selectedFile}
@@ -78,7 +103,7 @@ export default function Analyze() {
               {loading ? (
                 <>
                   <span className="analyze-spinner" aria-hidden="true" />
-                  Analyzing your food…
+                  Extracting text…
                 </>
               ) : (
                 <>🔬 Analyze Food</>
@@ -87,9 +112,9 @@ export default function Analyze() {
 
             {loading && (
               <div className="analyze-page__loading-info" role="status" aria-live="polite">
-                <p>🤖 Extracting ingredients and nutrition info…</p>
-                <p>📚 Cross-referencing WHO & FSSAI guidelines…</p>
-                <p>✨ Generating your health report…</p>
+                <p>📸 Processing image with PaddleOCR…</p>
+                <p>🔍 Extracting text from food label…</p>
+                <p>✨ Almost done…</p>
               </div>
             )}
           </div>
@@ -135,18 +160,17 @@ export default function Analyze() {
                 ))}
               </div>
             </div>
-
-            <div className="mock-notice card">
-              <h3>🚧 Demo Mode</h3>
-              <p>
-                The AI backend is not yet connected. Uploading any food image will
-                return sample mock data for a potato chips packet to demonstrate
-                the analysis interface.
-              </p>
-            </div>
           </div>
         </div>
       </div>
+
+      {/* Camera modal */}
+      {showCamera && (
+        <CameraCapture
+          onCapture={handleCameraCapture}
+          onClose={() => setShowCamera(false)}
+        />
+      )}
     </main>
   );
 }

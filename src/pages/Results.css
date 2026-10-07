@@ -273,3 +273,73 @@
     height: 180px;
   }
 }
+
+/* OCR Result Layout */
+.ocr-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.ocr-image-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ocr-image-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--neutral-900);
+}
+
+.ocr-image-card__img {
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: contain;
+  max-height: 420px;
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-100);
+}
+
+.ocr-text-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ocr-text-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--neutral-900);
+}
+
+.ocr-text-card__note {
+  font-size: 13px;
+  color: var(--neutral-400);
+}
+
+.ocr-text-card__content {
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius);
+  padding: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--neutral-700);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 200px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .ocr-result-grid {
+    grid-template-columns: 1fr;
+  }
+}

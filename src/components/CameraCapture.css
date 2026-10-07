@@ -1,0 +1,206 @@
+.camera-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.camera-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.camera-modal__panel {
+  position: relative;
+  background: var(--neutral-900);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 640px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.camera-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.camera-modal__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.camera-modal__close {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.camera-modal__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.camera-modal__body {
+  position: relative;
+  background: #000;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-video {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.camera-captured-img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+/* Status overlays */
+.camera-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 48px 24px;
+  color: var(--white);
+  text-align: center;
+  min-height: 240px;
+}
+
+.camera-status--error {
+  gap: 12px;
+}
+
+.camera-status__icon {
+  font-size: 48px;
+}
+
+.camera-status__msg {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.camera-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--green-400);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Footer */
+.camera-modal__footer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 76px;
+}
+
+/* Shutter button */
+.camera-capture-btn {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-capture-btn__ring {
+  position: absolute;
+  inset: 0;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transition: border-color 0.15s;
+}
+
+.camera-capture-btn__dot {
+  width: 46px;
+  height: 46px;
+  background: var(--white);
+  border-radius: 50%;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.camera-capture-btn:hover .camera-capture-btn__dot {
+  background: var(--green-400);
+  transform: scale(0.93);
+}
+
+.camera-capture-btn:active .camera-capture-btn__dot {
+  transform: scale(0.86);
+}
+
+/* Confirm/Retake actions */
+.camera-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.camera-actions .btn-secondary {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.camera-actions .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.camera-modal__hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  padding: 0 20px 14px;
+  min-height: 30px;
+}
+
+@media (max-width: 480px) {
+  .camera-modal {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .camera-modal__panel {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    max-width: 100%;
+  }
+}
